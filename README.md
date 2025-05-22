@@ -17,8 +17,7 @@ This project bootstraps a secure Azure landing zone for hybrid cloud scenarios u
 1. **Configure variables:**
    - Edit `env/dev.tfvars` or use a `.env` file for secrets and environment-specific values.
 2. **Initialize Terraform:**
-   - `terraform init -var-file="env/dev.tfvars"`
-   - Or load your `.env` file and run `terraform init`
+   - `./init-tf.ps1 -EnvName dev -StorageAccount mystoragename`
 3. **Plan and apply:**
    - `terraform plan -var-file="env/dev.tfvars"`
    - `terraform apply -var-file="env/dev.tfvars"`
@@ -41,8 +40,8 @@ This project bootstraps a secure Azure landing zone for hybrid cloud scenarios u
 Import-Module pwsh-dotenv
 Import-Dotenv .\.env
 
-# Run Terraform
-./tf init -var-file="env/dev.tfvars"
-./tf plan -var-file="env/dev.tfvars"
-./tf apply -var-file="env/dev.tfvars"
+# Run Terraform with environment-specific state file
+./init-tf.ps1 -EnvName dev -StorageAccount mystoragename
+./tf plan 
+./tf apply
 ```
