@@ -19,10 +19,6 @@ override.tf.json
 .terraformrc
 terraform.rc
 
-# Sensitive variable files
-*.tfvars
-*.tfvars.json
-
 # Ignore plan output
 *.tfplan
 
